@@ -1,7 +1,6 @@
 import java.io.*;
-import java.util.Scanner;
 
-public class CodeUpBasic84 {
+public class CodeUpBasic84  {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -11,25 +10,15 @@ public class CodeUpBasic84 {
         int g = Integer.parseInt(nums[1]);
         int b = Integer.parseInt(nums[2]);
 
-        int rt = 0;
-        int gt = 0;
-        int bt = 0;
 
-        for (int i = 0; i < r * g * b; i++) {
-            bw.write(rt + " " + gt + " " + bt + "\n");
-            bw.flush();
-            if (bt != b - 1){
-                bt++;
-            } else {
-                bt = 0;
-                if (gt != g - 1) {
-                    gt++;
-                } else {
-                    gt = 0;
-                    rt++;
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < g; j++){
+                for (int k = 0; k < b; k++) {
+                    bw.write(i + " " + j + " " + k + "\n");
                 }
             }
         }
-        System.out.println(r * g * b);
+        bw.write(r * g * b +"\n");
+        bw.flush();
     }
 }
